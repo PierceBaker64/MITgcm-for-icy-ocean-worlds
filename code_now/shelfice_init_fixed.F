@@ -378,10 +378,11 @@ c     wykang: def
           DO i = 1-OLx, sNx+OLx
 c          wykang: gravity variation with r
            H_ice=shelficeMassInit(I,J,bi,bj)/rhoShelfIce
-           p_correction=((1.-rho_out/rho_bulk)/(1.-H_ice/rSphere)
-     &              +rho_out/rho_bulk*(1.-H_ice/rSphere/2.))
+c           p_correction=((1.-rho_out/rho_bulk)/(1.-H_ice/rSphere)
+c     &              +rho_out/rho_bulk*(1.-H_ice/rSphere/2.))
            shelficeLoadAnomaly(i,j,bi,bj) = gravity
-     &      *(shelficeMassInit(i,j,bi,bj)*p_correction 
+     &      *(shelficeMassInit(i,j,bi,bj)
+c     &      *p_correction 
      &      + rhoConst*Ro_surf(i,j,bi,bj))
 c     &      *(shelficeMassInit(i,j,bi,bj)+rhoConst*Ro_surf(i,j,bi,bj))
           ENDDO
